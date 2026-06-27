@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>دانلود مود Minecraft</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:tahoma;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#00c853,#00b0ff,#673ab7);
+    background-size:400% 400%;
+    animation:bg 10s infinite alternate;
+}
+
+@keyframes bg{
+    from{background-position:left;}
+    to{background-position:right;}
+}
+
+.box{
+    width:90%;
+    max-width:420px;
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    text-align:center;
+    color:#fff;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+img{
+    width:110px;
+    margin-bottom:15px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:18px;
+    margin-top:12px;
+    transition:.25s;
+}
+
+.download{
+    background:#00e676;
+    color:#000;
+    font-weight:bold;
+}
+
+.download:hover{
+    transform:scale(1.03);
+}
+
+.open{
+    display:none;
+    background:#ff9800;
+    color:#fff;
+    font-weight:bold;
+}
+
+.progress{
+    display:none;
+    margin-top:20px;
+    height:12px;
+    background:#ffffff40;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.bar{
+    width:0%;
+    height:100%;
+    background:#00ff95;
+    transition:.05s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+
+<h1>دانلود مود Minecraft</h1>
+
+<p>برای نصب مود ابتدا دانلود کنید سپس Minecraft را باز نمایید.</p>
+
+<button class="download" onclick="downloadMod()">
+⬇ دانلود مود
+</button>
+
+<div class="progress" id="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<button class="open" id="openBtn"
+onclick="window.location='minecraft://';">
+🎮 باز کردن Minecraft
+</button>
+
+</div>
+
+<script>
+
+function downloadMod(){
+
+document.getElementById("progress").style.display="block";
+
+let w=0;
+
+let t=setInterval(function(){
+
+w++;
+
+document.getElementById("bar").style.width=w+"%";
+
+if(w>=100){
+
+clearInterval(t);
+
+// دانلود فایل
+location.href="6.mcaddon";
+
+// نمایش دکمه باز کردن ماینکرفت
+setTimeout(function(){
+document.getElementById("openBtn").style.display="block";
+},800);
+
+}
+
+},20);
+
+}
+
+</script>
+
+</body>
+</html>
