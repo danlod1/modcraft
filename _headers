@@ -1,2 +1,3 @@
 /*.mcaddon
-  Content-Type: application/mcaddon
+Content-Type: application/mcaddon
+Content-Disposition: attachment
