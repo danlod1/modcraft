@@ -77,11 +77,14 @@ button{
     transform:scale(1.03);
 }
 
-.open{
-    display:none;
+.back{
     background:#ff9800;
     color:#fff;
     font-weight:bold;
+}
+
+.back:hover{
+    transform:scale(1.03);
 }
 
 .progress{
@@ -99,6 +102,13 @@ button{
     background:#00ff95;
     transition:.05s;
 }
+
+video{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:20px;
+    display:block;
+}
 </style>
 
 </head>
@@ -115,14 +125,7 @@ button{
 برای نصب مود ابتدا دانلود کنید، سپس Minecraft را باز نمایید.
 </p>
 
-<div style="position:relative;padding-top:56.25%;">
-<iframe
-src="https://www.aparat.com/video/video/embed/videohash/zkbacq2/vt/frame"
-style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-allowfullscreen>
-</iframe>
-</div>
-
+<video src="video_amoozesh.mp4" controls playsinline></video>
 
 <button class="download" onclick="downloadMod()">
 ⬇ دانلود مود
@@ -134,8 +137,8 @@ allowfullscreen>
 </div>
 
 
-<button class="open" id="openBtn" onclick="openMinecraft()">
-🎮 باز کردن Minecraft
+<button class="back" onclick="goBack()">
+🔙 بازگشت
 </button>
 
 
@@ -162,16 +165,8 @@ if(w>=100){
 clearInterval(timer);
 
 
-// باز کردن فایل mcaddon
+// دانلود فایل mcaddon
 window.location.href="1.mcaddon";
-
-
-// نمایش دکمه بعد از کمی زمان
-setTimeout(function(){
-
-document.getElementById("openBtn").style.display="block";
-
-},1500);
 
 
 }
@@ -182,10 +177,10 @@ document.getElementById("openBtn").style.display="block";
 
 
 
-function openMinecraft(){
+function goBack(){
 
-// دوباره فایل را به Minecraft می‌فرستد
-window.location.href="1.mcaddon";
+// برگشت به صفحه قبلی
+history.back();
 
 }
 
